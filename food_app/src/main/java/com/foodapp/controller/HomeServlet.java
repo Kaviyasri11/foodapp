@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class HomeServlet extends HttpServlet {
   protected void service(HttpServletRequest req,HttpServletResponse resp)throws ServletException ,IOException
   {
-	 System.out.println("hi");
+	 System.out.println("hi ");
 	 RestaurantDAOimpl daoimpl=new RestaurantDAOimpl();
 	 List<Restaurant> allRestaurants=daoimpl.getAllRestaurant();
 	 for(Restaurant restaurant:allRestaurants)

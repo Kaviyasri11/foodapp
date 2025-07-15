@@ -12,7 +12,7 @@ public class RestaurantLaunch {
 	        System.out.println("Enter the name:");
 	        String name = s.next();
 
-	        System.out.println("Enter the address:");
+	        System.out.println("Enter the address :");
 	        String address = s.next();
 
 	        System.out.println("Enter the phone number:");
