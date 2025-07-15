@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Login | Foodie App</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 360px;
+    position: relative;
+    animation: float 2s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+  }
+  .login-container h2 {
+    text-align: center;
+    color: #e76f51;
+    margin-bottom: 2rem;
+  }
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  input {
+    width: 100%;
+    padding: 0.9rem;
+    margin: 0.6rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  .toggle-eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    fill: #e76f51;
+    user-select: none;
+  }
+  button {
+    width: 100%;
+    padding: 0.9rem;
+    background: #e76f51;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #d35443;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  .footer a {
+    color: #e76f51;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  .food-icon {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="food-icon">🍕</div>
+  <h2>Login to Foodie</h2>
+  <form action="callingLoginServlet" method="get">
+    <input type="text" name="name" placeholder="Name" required>
+    <div class="input-wrapper">
+      <input type="password" id="password" name="password" placeholder="Password" required />
+      <svg class="toggle-eye" id="eyeIcon" onclick="togglePasswordVisibility()" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" >
+        <!-- Eye with slash icon by default -->
+        <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" fill="none" stroke="#e76f51" stroke-width="2"/>
+        <line x1="2" y1="2" x2="22" y2="22" stroke="#e76f51" stroke-width="2"/>
+      </svg>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  <div class="footer">
+    Don't have an account? <a href="register.html">Create one here</a>
+  </div>
+</div>
+
+<script>
+  const eyeIcon = document.getElementById('eyeIcon');
+  const passwordInput = document.getElementById('password');
+
+  const eyeSVG = `
+    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" fill="none" stroke="#e76f51" stroke-width="2"/>
+    <circle cx="12" cy="12" r="3" fill="none" stroke="#e76f51" stroke-width="2"/>
+  `;
+
+  const eyeSlashSVG = `
+    <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7z" fill="none" stroke="#e76f51" stroke-width="2"/>
+    <line x1="2" y1="2" x2="22" y2="22" stroke="#e76f51" stroke-width="2"/>
+  `;
+
+  function togglePasswordVisibility() {
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      eyeIcon.innerHTML = eyeSVG;
+    } else {
+      passwordInput.type = 'password';
+      eyeIcon.innerHTML = eyeSlashSVG;
+    }
+  }
+
+  // Initialize with eyeSlash icon (password hidden)
+  eyeIcon.innerHTML = eyeSlashSVG;
+</script>
+
+</body>
+</html>

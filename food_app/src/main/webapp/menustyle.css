@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #e23744;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.navbar nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #e23744;
+}
+
+.menu-container {
+  padding: 40px 60px;
+}
+
+.menu-title {
+  font-size: 28px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e23744;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.menu-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.menu-card:hover {
+  transform: scale(1.03);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.menu-details {
+  padding: 15px;
+}
+
+.menu-details h3 {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.price {
+  color: #e23744;
+}
+
+.rating {
+  color: #48c479;
+}

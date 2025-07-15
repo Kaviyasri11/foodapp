@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foodie App - Register</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fef6f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #e76f51;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #e76f51;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #d45d3d;
+        }
+
+        .footer {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>🍔 Register for Foodie</h2>
+        <form action="callingregisterServlet" method="post">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="phonenumber" placeholder="Phone Number" required>
+            <input type="text" name="address" placeholder="Delivery Address" required>
+            <select name="role" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="customer">Customer</option>
+                <option value="delivery_agent">Delivery_Agent</option>
+                <option value="super_admin">Super_Admin</option>
+            </select>
+            <button type="submit">Create Account</button>
+        </form>
+        <div class="footer">
+            Already have an account? <a href="index.html">Login</a>
+        </div>
+    </div>
+
+</body>
+</html>
